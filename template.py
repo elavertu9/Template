@@ -1,13 +1,14 @@
-import sys
+import sys, os
 
 def printUsage():
     print("\n\tusage: template <language> <file name> \n\tusage: template <file name>\n\tnote: file extension will be added for you\n")
 
 
 def createJava(filename):
+    className = filename[0].upper() + filename[1:].lower()
     filename = filename + ".java"
     file = open(filename, "w+")
-    file.write("public class Template { \n\tpublic static void main(String[] args) {\n\n\t}\n}\n")
+    file.write("public class " + className + " { \n\tpublic static void main(String[] args) {\n\n\t}\n}\n")
     file.close()
     print("Created Java file: " + filename)
 
@@ -20,6 +21,15 @@ def createPython(filename):
     print("Created Python file: " + filename)
 
 
+def createBash(filename):
+    filename = filename + ".sh"
+    file = open(filename, "w+")
+    file.write("#!/bin/bash\n\n")
+    file.close()
+    print("Created Bash Script: " + filename)
+    os.system("chmod +x " + filename)
+
+
 def checkArgs(arguments):
     language = arguments[0].lower()
     filename = arguments[1]
@@ -27,12 +37,15 @@ def checkArgs(arguments):
         createJava(filename)
     elif language == "python":
         createPython(filename)
+    elif language == "bash":
+        createBash(filename)
     else:
         print("Language \"" + arguments[0] + "\" is not a valid option")
         exit(1)
 
 
 def main():
+    # c, c++, vue, html, react, angular, bash
     arguments = sys.argv[1:]
     numArgs = len(arguments)
 
