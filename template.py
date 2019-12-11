@@ -6,7 +6,7 @@ def printUsage():
 
 def createJava(filename):
     className = filename[0].upper() + filename[1:].lower()
-    filename = filename + ".java"
+    filename = filename[0].upper() + filename[1:].lower() + ".java"
     file = open(filename, "w+")
     file.write("public class " + className + " { \n\tpublic static void main(String[] args) {\n\n\t}\n}\n")
     file.close()
@@ -39,6 +39,22 @@ def createHTML(filename):
     print("Created HTML file: " + filename)
 
 
+def createC(filename):
+    filename = filename + ".c"
+    file = open(filename, "w+")
+    file.write("#include <stdio.h>\n#include <stdlib.h>\n\nint main(int argc, char** argv) {\n\n}\n")
+    file.close()
+    print("Created C file: " + filename)
+
+
+def createCC(filename):
+    filename = filename + ".cc"
+    file = open(filename, "w+")
+    file.write("#include <iostream>\n\nusing namespace std;\n\nint main(int argc, char** argv) {\n\n}\n")
+    file.close()
+    print("Created C++ file: " + filename)
+
+
 def checkArgs(arguments):
     language = arguments[0].lower()
     filename = arguments[1]
@@ -50,13 +66,17 @@ def checkArgs(arguments):
         createBash(filename)
     elif language == "html":
         createHTML(filename)
+    elif language == "c":
+        createC(filename)
+    elif language == "c++":
+        createCC(filename)
     else:
         print("Language \"" + arguments[0] + "\" is not a valid option")
         exit(1)
 
 
 def main():
-    # c, c++, vue, react, angular
+    # vue, react, angular
     arguments = sys.argv[1:]
     numArgs = len(arguments)
 
