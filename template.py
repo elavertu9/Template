@@ -26,8 +26,17 @@ def createBash(filename):
     file = open(filename, "w+")
     file.write("#!/bin/bash\n\n")
     file.close()
-    print("Created Bash Script: " + filename)
     os.system("chmod +x " + filename)
+    print("Created Bash Script: " + filename)
+
+
+def createHTML(filename):
+    filename = filename + ".html"
+    file = open(filename, "w+")
+    file.write("<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<title></title>\n\t</head>\n\n\t<body>\n\n\t</body>\n</html>\n")
+    file.close()
+    os.system("chmod 644 " + filename)
+    print("Created HTML file: " + filename)
 
 
 def checkArgs(arguments):
@@ -39,13 +48,15 @@ def checkArgs(arguments):
         createPython(filename)
     elif language == "bash":
         createBash(filename)
+    elif language == "html":
+        createHTML(filename)
     else:
         print("Language \"" + arguments[0] + "\" is not a valid option")
         exit(1)
 
 
 def main():
-    # c, c++, vue, html, react, angular, bash
+    # c, c++, vue, react, angular
     arguments = sys.argv[1:]
     numArgs = len(arguments)
 
