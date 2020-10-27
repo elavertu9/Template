@@ -55,6 +55,12 @@ def createCC(filename):
     print("Created C++ file: " + filename)
 
 
+def touch(filename):
+    cmd = "touch " + filename
+    os.system(cmd)
+    print("Created file using touch command: " + filename)
+
+
 def checkArgs(arguments):
     language = arguments[0].lower()
     filename = arguments[1]
@@ -81,8 +87,7 @@ def main():
     numArgs = len(arguments)
 
     if numArgs == 1:
-        # Use touch command
-        print("1 arg provided, issuing touch command using filename provided")
+        touch(arguments[0])
     elif numArgs == 2:
         checkArgs(arguments)
     else:
