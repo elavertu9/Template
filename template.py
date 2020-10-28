@@ -1,7 +1,7 @@
-import sys, os
+import sys, os, re
 
 def printUsage():
-    print("\n\tusage: template <language> <file name> \n\tusage: template <file name>\n\tnote: file extension will be added for you\n")
+    print("\n\tusage: template <file name> <language> \n\tusage: template <file name>\n\tnote: file extension will be added for you\n")
 
 
 def createJava(filename):
@@ -61,24 +61,27 @@ def touch(filename):
     print("Created file using touch command: " + filename)
 
 
-def checkArgs(arguments):
-    language = arguments[0].lower()
-    filename = arguments[1]
-    if language == "java":
+def createFile(filename, ext):
+    if ext == "java":
         createJava(filename)
-    elif language == "python":
+    elif ext == "python":
         createPython(filename)
-    elif language == "bash":
+    elif ext == "bash":
         createBash(filename)
-    elif language == "html":
+    elif ext == "html":
         createHTML(filename)
-    elif language == "c":
+    elif ext == "c":
         createC(filename)
-    elif language == "c++":
+    elif ext == "c++" or ext == "cc":
         createCC(filename)
     else:
-        print("Language \"" + arguments[0] + "\" is not a valid option")
+        print("Language \"" + ext + "\" is unsupported input")
         exit(1)
+
+
+def removeExtension(filename):
+    ext = filename.split(".")
+    return ext[0]
 
 
 def main():
@@ -87,9 +90,14 @@ def main():
     numArgs = len(arguments)
 
     if numArgs == 1:
-        touch(arguments[0])
+        filename = arguments[0]
+        file = removeExtension(filename)
+        touch(file)
     elif numArgs == 2:
-        checkArgs(arguments)
+        filename = arguments[0]
+        language = arguments[1].lower()
+        file = removeExtension(filename)
+        createFile(file, language)
     else:
         printUsage()
 
