@@ -34,7 +34,7 @@ Template is built using python and bash.
 <!-- USAGE EXAMPLES -->
 ## Usage
 ```sh
-template <language> <file name>
+template <file name> <language>
 template <file name>
 ```
 
