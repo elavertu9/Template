@@ -5,8 +5,7 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Installation](#installation)
+* [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contact](#contact)
@@ -25,11 +24,7 @@ Template is built using python and bash.
 
 
 <!-- GETTING STARTED -->
-## Getting Started
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Installation
+## Installation
 1. Clone repository
 2. Execute setup script
 ```sh
