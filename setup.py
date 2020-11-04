@@ -1,19 +1,17 @@
 import sys, platform, os
 
-def printUsage():
-	print("Usage: \n\tsetup.py <mac|MAC|linux|Linux>")
-
-
 def configureMac():
 	path  = os.popen('pwd').readlines()[0].rstrip()
 	append = "echo \'alias template=\"python " + path + "/template.py \"\' >> ~/.bash_profile"
 	os.system(append)
+	print("Refresh your terminal using . ~/.bash_profile for the changes to take effect.")
 
 
 def configureLinux():
 	path = os.popen('pwd').readlines()[0].rstrip()
 	append = "echo \'alias template=\"python " + path + "/template.py \"\' >> ~/.bashrc"
 	os.system(append)
+	print("Refresh your terminal using . ~/.bashrc for the changes to take effect.")
 
 
 def main():

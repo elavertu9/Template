@@ -56,6 +56,6 @@ Distributed under the GNU General Public License v3.0
 
 <!-- CONTACT -->
 ## Contact
-Evan Lavertu - evan.lavertu@gmail.com
+Evan Lavertu - [www.lavertu.dev](https://www.lavertu.dev)
 
 Project Link: [https://github.com/elavertu9/Template](https://github.com/elavertu9/Template)
