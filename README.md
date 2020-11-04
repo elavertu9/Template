@@ -58,4 +58,4 @@ Distributed under the GNU General Public License v3.0
 ## Contact
 Evan Lavertu - [www.lavertu.dev](https://www.lavertu.dev)
 
-Project Link: [https://github.com/elavertu9/Template](https://github.com/elavertu9/Template)
+Project Link: [Template](https://github.com/elavertu9/Template)
