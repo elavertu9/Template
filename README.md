@@ -26,10 +26,20 @@ Template is built using python and bash.
 <!-- GETTING STARTED -->
 ## Installation
 1. Clone repository
-2. Execute setup script
+2. Execute the setup python file within the cloned repository
 ```sh
-./setup
+python setup.py
 ```
+3. Refresh shell
+* Mac
+```sh
+source ~/.bash_profile
+```
+* Linux
+```sh
+source ~/.bashrc
+```
+4. Done!
 
 <!-- USAGE EXAMPLES -->
 ## Usage
