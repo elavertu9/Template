@@ -85,7 +85,6 @@ def removeExtension(filename):
 
 
 def main():
-    # vue, react, angular
     arguments = sys.argv[1:]
     numArgs = len(arguments)
 
