@@ -22,6 +22,7 @@ def main():
 		configureMac()
 	elif os == 'Linux':
 		print("Linux operating system detected. Adding alias entry to .bashrc...")
+		configureLinux()
 	else:
 		print(os + " is not supported by Template.py")
 
